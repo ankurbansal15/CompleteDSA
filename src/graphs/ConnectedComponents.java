@@ -31,7 +31,9 @@ public class ConnectedComponents {
         boolean[] visited = new boolean[graph.length];
         for (int i = 0; i < graph.length; i++) {
             if(!visited[i]){
-                return detectCycleUtil(graph,visited,i,-1);
+                if(detectCycleUtil(graph,visited,i,-1)){
+                    return true;
+                };
             }
         }
         return false;
@@ -41,11 +43,13 @@ public class ConnectedComponents {
      for(int i = 0;i<graph[curr].size();i++){
          Edge edge = graph[curr].get(i);
          //case 3
-         if(!visited[edge.dest] && detectCycleUtil(graph,visited,edge.dest,curr)){
-             return true;
+         if(!visited[edge.dest]){
+             if(detectCycleUtil(graph,visited,edge.dest,curr)){
+                 return true;
+             }
          }
          //case 1
-         if(visited[edge.dest] && curr != par){
+         else if(visited[edge.dest] && edge.dest != par){
              return true;
          }
      }
@@ -55,11 +59,11 @@ public class ConnectedComponents {
         for(int i = 0;i<graph.length;i++){
             graph[i] = new ArrayList<>();
         }
-        graph[0].add(new Edge(0,1));
+//        graph[0].add(new Edge(0,1));
         graph[0].add(new Edge(0,2));
         graph[0].add(new Edge(0,3));
 
-        graph[1].add(new Edge(1,0));
+//        graph[1].add(new Edge(1,0));
         graph[1].add(new Edge(1,2));
 
         graph[2].add(new Edge(2,1));
