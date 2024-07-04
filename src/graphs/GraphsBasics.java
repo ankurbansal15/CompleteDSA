@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class Graphs {
+public class GraphsBasics {
     public static void main(String[] args) {
         /*
         1 ----- 3
@@ -19,12 +19,12 @@ public class Graphs {
         createGraph(graph);
         bfs(graph,0);
         System.out.println();
-        dfs(graph,0,new boolean[V]);
+        dfs(graph,0);
         System.out.println();
         System.out.println(hasPath(graph,0,5,new boolean[V]));
 
     }
-    public static boolean hasPath(ArrayList<Edge>[] graph, int src, int dest, boolean[] visited ){
+    private static boolean hasPath(ArrayList<Edge>[] graph, int src, int dest, boolean[] visited ){
         if(src == dest) return true;
         visited[src] = true;
         for(int i = 0;i<graph[src].size();i++){
@@ -33,23 +33,37 @@ public class Graphs {
         }
         return false;
     }
+    private static void dfs(ArrayList<Edge>[] graph, int curr){
+        boolean[] visited = new boolean[graph.length];
+        for(int i = 0;i<graph.length;i++){
+            if(!visited[i]){
+                dfsUtil(graph,curr,visited);
+            }
+        }
+    }
     //O(V+E)
-    public static void dfs(ArrayList<Edge>[] graph, int curr, boolean[] visited){
+    private static void dfsUtil(ArrayList<Edge>[] graph, int curr, boolean[] visited){
         System.out.print(curr + " ");
         visited[curr] = true;
         for(int i = 0;i<graph[curr].size();i++){
             Edge edge = graph[curr].get(i);
             if(!visited[edge.dest]){
-                dfs(graph,edge.dest,visited);
+                dfsUtil(graph,edge.dest,visited);
             }
         }
     }
     //O(V+E)
-    public static void bfs(ArrayList<Edge>[] graph, int src){
-        Queue<Integer> queue = new LinkedList<>();
+    private static void bfs(ArrayList<Edge>[] graph, int src){
         boolean[] visited = new boolean[graph.length];
+        for(int i = 0;i<graph.length;i++){
+            if(!visited[i]){
+                bfsUtil(graph,src,visited);
+            }
+        }
+    }
+    private static void bfsUtil(ArrayList<Edge>[] graph, int src, boolean[] visited){
+        Queue<Integer> queue = new LinkedList<>();
         queue.add(src);
-
         while(!queue.isEmpty()){
             int curr = queue.poll();
             if(!visited[curr]){
@@ -62,7 +76,7 @@ public class Graphs {
             }
         }
     }
-    public static void createGraph(ArrayList<Edge>[] graph){
+    private static void createGraph(ArrayList<Edge>[] graph){
         for(int i = 0;i<graph.length;i++){
             graph[i] = new ArrayList<>();
         }
