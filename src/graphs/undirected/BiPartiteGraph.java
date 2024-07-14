@@ -1,4 +1,6 @@
-package graphs;
+package graphs.undirected;
+
+import graphs.Edge;
 
 import java.util.ArrayList;
 import java.util.Arrays;

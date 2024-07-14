@@ -1,8 +1,10 @@
-package graphs;
+package graphs.directed;
+
+import graphs.Edge;
 
 import java.util.ArrayList;
 
-public class DirectedGraph {
+public class DetectCycle {
     public static void main(String[] args) {
     int V = 4;
     ArrayList<Edge>[] graph = new ArrayList[V];

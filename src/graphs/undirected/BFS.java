@@ -1,10 +1,12 @@
-package graphs;
+package graphs.undirected;
+
+import graphs.Edge;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class GraphsBasics {
+public class BFS {
     public static void main(String[] args) {
         /*
         1 ----- 3
@@ -19,38 +21,6 @@ public class GraphsBasics {
         createGraph(graph);
         bfs(graph,0);
         System.out.println();
-        dfs(graph,0);
-        System.out.println();
-        System.out.println(hasPath(graph,0,5,new boolean[V]));
-
-    }
-    private static boolean hasPath(ArrayList<Edge>[] graph, int src, int dest, boolean[] visited ){
-        if(src == dest) return true;
-        visited[src] = true;
-        for(int i = 0;i<graph[src].size();i++){
-            Edge edge = graph[src].get(i);
-            if(!visited[edge.dest] && hasPath(graph,edge.dest,dest,visited)) return true;
-        }
-        return false;
-    }
-    private static void dfs(ArrayList<Edge>[] graph, int curr){
-        boolean[] visited = new boolean[graph.length];
-        for(int i = 0;i<graph.length;i++){
-            if(!visited[i]){
-                dfsUtil(graph,curr,visited);
-            }
-        }
-    }
-    //O(V+E)
-    private static void dfsUtil(ArrayList<Edge>[] graph, int curr, boolean[] visited){
-        System.out.print(curr + " ");
-        visited[curr] = true;
-        for(int i = 0;i<graph[curr].size();i++){
-            Edge edge = graph[curr].get(i);
-            if(!visited[edge.dest]){
-                dfsUtil(graph,edge.dest,visited);
-            }
-        }
     }
     //O(V+E)
     private static void bfs(ArrayList<Edge>[] graph, int src){
