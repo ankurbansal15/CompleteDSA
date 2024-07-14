@@ -36,7 +36,7 @@ public class TopologicalSortingUsingDFS {
         stack.push(curr);
     }
 
-    public static void createGraph(ArrayList<Edge>[] graph){
+    private static void createGraph(ArrayList<Edge>[] graph){
         for(int i = 0;i<graph.length;i++){
             graph[i] = new ArrayList<>();
         }

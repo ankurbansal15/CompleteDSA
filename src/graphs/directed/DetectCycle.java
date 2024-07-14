@@ -42,7 +42,7 @@ public class DetectCycle {
         return false;
     }
 
-    public static void createGraph(ArrayList<Edge>[] graph){
+    private static void createGraph(ArrayList<Edge>[] graph){
         //False - No Cycle
         for(int i = 0;i<graph.length;i++){
             graph[i] = new ArrayList<>();
