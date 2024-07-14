@@ -44,7 +44,7 @@ public class TopologicalSortingUsingBFS {
 
 
     }
-    public static void createGraph(ArrayList<Edge>[] graph){
+    private static void createGraph(ArrayList<Edge>[] graph){
         for(int i = 0;i<graph.length;i++){
             graph[i] = new ArrayList<>();
         }
