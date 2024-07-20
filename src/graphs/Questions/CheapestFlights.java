@@ -1,4 +1,4 @@
-package graphs.directed;
+package graphs.Questions;
 
 import graphs.Edge;
 

@@ -24,6 +24,7 @@ public class PrimsAlgorithm {
        int V = 4;
        ArrayList<Edge>[] graph = new ArrayList[V];
        createGraph(graph);
+       prims(graph);
 
     }
     public static void prims(ArrayList<Edge>[] graph){
