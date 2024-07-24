@@ -1,4 +1,4 @@
-package graphs;
+package graphs.dsu;
 
 public class DSU {
     static int n = 7;
