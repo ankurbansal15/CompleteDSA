@@ -4,7 +4,7 @@ import graphs.Edge;
 
 import java.util.ArrayList;
 
-public class TarjansAlgorithm {
+public class TarjansAlgorithmBridge {
     public static void main(String[] args) {
        int V = 5;
        ArrayList<Edge>[] graph = new ArrayList[V];
