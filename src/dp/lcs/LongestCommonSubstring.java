@@ -22,3 +22,4 @@ public class LongestCommonSubstring {
         return ans;
     }
 }
+
