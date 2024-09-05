@@ -1,6 +1,6 @@
 package dp.lcs;
 
-public class LCS {
+public class LongestCommonSubsequence {
     public static void main(String[] args) {
         String str1 = "abcdge";
         String str2 = "abedg";
@@ -13,11 +13,9 @@ public class LCS {
             }
         }
         System.out.println(lcs(str1,str2,n,m,dp));
-        System.out.println(lcsTab(str1,str2));
-
-
+        System.out.println(longestCommonSubsequenceTab(str1,str2));
     }
-    public static int lcsTab(String str1, String str2){
+    public static int longestCommonSubsequenceTab(String str1, String str2){
         int n = str1.length();
         int m = str2.length();
         int[][] dp = new int[n+1][m+1];
