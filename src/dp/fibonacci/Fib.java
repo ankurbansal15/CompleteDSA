@@ -1,4 +1,4 @@
-package dp;
+package dp.fibonacci;
 
 public class Fib {
     public static void main(String[] args) { //O(n)

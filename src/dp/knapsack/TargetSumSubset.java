@@ -1,4 +1,4 @@
-package dp;
+package dp.knapsack;
 
 public class TargetSumSubset {
     public static void main(String[] args) {
