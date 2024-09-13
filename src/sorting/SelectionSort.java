@@ -21,7 +21,6 @@ public class SelectionSort{
             for (int j = i+1; j < array.length; j++) {
                 
                 //for making, it reverses sort just change the below inequalities
-                // < , >
                 if (array[minPosition] > array[j]) {
                     minPosition = j;
                 }
