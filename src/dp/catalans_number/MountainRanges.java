@@ -10,7 +10,7 @@ public class MountainRanges {
         dp[0] = 1;
         dp[1] = 1;
         for(int i = 2;i<n+1;i++){
-            //I pairs -> mountain ranges => Ci
+            //I pair -> mountain ranges => Ci
             for(int j = 0;j<i;j++){
                 long inside = dp[j];
                 long outside = dp[i-j-1];
