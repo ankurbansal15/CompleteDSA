@@ -5,7 +5,7 @@ public class MaxSubArraySumKadanesAlgo {
     public static void main(String[] args) {
 
         int[] num = {-1,-2,-3,4};
-        kadanes(num);
+        kadanes( num);
     }
 
     public static void kadanes(int[] num){
