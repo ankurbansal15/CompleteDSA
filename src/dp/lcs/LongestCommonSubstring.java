@@ -4,7 +4,7 @@ public class LongestCommonSubstring {
     public static void main(String[] args) {
        String str1 = "ABCDE";
        String str2 = "ABGCE";
-        System.out.println(longestCommonSubstringTab(str1,str2));
+       System.out.println(longestCommonSubstringTab(str1,str2));
     }
     public static int longestCommonSubstringTab(String str1, String str2){
         int n = str1.length();
