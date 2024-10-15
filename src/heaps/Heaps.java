@@ -1,4 +1,4 @@
-package Heaps_Priority
+package heaps;
 
 import java.util.ArrayList;
 
