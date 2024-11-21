@@ -392,7 +392,7 @@ public class LinkedList {
         System.out.println(ll.palindrome());
 
         head = ll.mergeSort(head);
-
+        ll.print();
         ll.zigzag();
         ll.print();
 

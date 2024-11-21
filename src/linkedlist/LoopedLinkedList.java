@@ -1,6 +1,6 @@
 package linkedlist;
 
-public class LinkedList2 {
+public class LoopedLinkedList {
 
     public static Node head;
     public static Node tail;
@@ -74,7 +74,7 @@ public class LinkedList2 {
     }
 
     public static void main(String[] args) {
-        LinkedList2 ll = new LinkedList2();
+        LoopedLinkedList ll = new LoopedLinkedList();
 
         ll.addLast(1);
         ll.addLast(2);
