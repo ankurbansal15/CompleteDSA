@@ -1,5 +1,7 @@
 package binary_tree;
 
+import util.Node;
+
 public class BasicBinaryTree {
 
     public static void main(String[] args) {

@@ -1,5 +1,7 @@
 package binary_tree;
 
+import util.Node;
+
 public class TransformToSumTree {
 
     public static void main(String[] args){
