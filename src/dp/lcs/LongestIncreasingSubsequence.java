@@ -8,6 +8,7 @@ public class LongestIncreasingSubsequence {
         System.out.println(longestIncreasingSubsequence(arr));
 
     }
+
     private static int longestIncreasingSubsequence(int[] arr){
         Set<Integer> set = new HashSet<>();
         for (int num : arr) {
