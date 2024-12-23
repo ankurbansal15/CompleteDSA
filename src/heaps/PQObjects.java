@@ -4,7 +4,7 @@ import java.util.PriorityQueue;
 
 public class PQObjects {
 
-    static class Student implements Comparable<Student> {
+    private static class Student implements Comparable<Student> {
         int rank;
         String name;
 

@@ -4,14 +4,11 @@ import java.util.PriorityQueue;
 
 public class NearestCars {
 
-    static class Point implements Comparable<Point> {
-        int x, y;
+    private static class Point implements Comparable<Point> {
         int distSq;
         int idx;
 
-        public Point(int x, int y, int distSq, int idx) {
-            this.x = x;
-            this.y = y;
+        public Point(int distSq, int idx) {
             this.distSq = distSq;
             this.idx = idx;
         }
@@ -30,7 +27,7 @@ public class NearestCars {
 
         for (int i = 0; i < pts.length; i++) {
             int distSq = pts[i][0] * pts[i][0] + pts[i][1] * pts[i][1];
-            list.add(new Point(pts[i][0], pts[i][1], distSq, i));
+            list.add(new Point(distSq, i));
         }
 
         for (int i = 0; i < k; i++) {

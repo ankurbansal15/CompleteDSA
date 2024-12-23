@@ -3,7 +3,7 @@ package heaps;
 import java.util.PriorityQueue;
 public class SlidingWindows {
 
-    static class Pair implements Comparable<Pair>{
+    private static class Pair implements Comparable<Pair>{
         int val;
         int idx;
 
@@ -30,7 +30,7 @@ public class SlidingWindows {
         res[0] = pq.peek().val;
 
         for(int i = k; i<arr.length; i++){
-            while(pq.size()>0 && pq.peek().val <= (i-k)){
+            while(!pq.isEmpty() && pq.peek().val <= (i-k)){
                 pq.remove();
             }
 

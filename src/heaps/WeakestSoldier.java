@@ -4,7 +4,7 @@ import java.util.PriorityQueue;
 
 public class WeakestSoldier {
 
-    static class Row implements Comparable<Row>{
+    private static class Row implements Comparable<Row>{
         int soldiers;
         int idx;
 
