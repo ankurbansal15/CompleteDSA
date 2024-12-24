@@ -5,7 +5,7 @@ import java.util.LinkedList;
 
 public class HashMapClient {
 
-    static class HashMap<K, V> {
+    private static class HashMap<K, V> {
 
         private class Node {
             K key;
@@ -94,12 +94,7 @@ public class HashMapClient {
             int bi = hashFunction(key);
             int di = SearchInLL(key, bi);
 
-            if (di != -1) {
-                return true;
-            } else {
-
-                return false;
-            }
+            return di != -1;
 
         }
 
@@ -131,7 +126,7 @@ public class HashMapClient {
 
         }
 
-        public ArrayList<K> keyset() {
+        public ArrayList<K> keySet() {
             ArrayList<K> keys = new ArrayList<>();
 
             for (int i = 0; i < buckets.length; i++) {
@@ -159,13 +154,13 @@ public class HashMapClient {
         hm.put("four", 4);
         hm.put("five", 5);
 
-        ArrayList<String> keys = hm.keyset();
+        ArrayList<String> keys = hm.keySet();
         for (String key : keys) {
             System.out.println(key);
         }
 
         System.out.println(hm.get("five"));
-        hm.remove("five");
+        System.out.println(hm.remove("five"));
 
         System.out.println(hm.get("five"));
 
