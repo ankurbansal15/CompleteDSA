@@ -19,9 +19,8 @@ public class CountSubArraySumK {
             sum += arr[i];
             if (map.containsKey(sum - k)) {
                 ans += map.get(sum - k);
-            } else {
-                map.put(sum, map.getOrDefault(sum, 0) + 1);
             }
+            map.put(sum, map.getOrDefault(sum, 0) + 1);
         }
 
         System.out.println(ans);
