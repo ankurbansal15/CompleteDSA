@@ -77,7 +77,7 @@ public class Heaps {
 
     }
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
 
         Heap h = new Heap();
 
