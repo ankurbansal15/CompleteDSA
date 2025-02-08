@@ -1,28 +1,42 @@
 package graphs.matrix;
 
 public class FloodFillAlgorithm {
-    public static void main(String[] args) {
 
+    public static void main(String[] args) {
+        int[][] image = {
+                {1, 1, 1},
+                {1, 1, 0},
+                {1, 0, 1}
+        };
+        int sr = 1, sc = 1, newColor = 2;
+
+        int[][] result = floodFill(image, sr, sc, newColor);
+
+        for (int[] row : result) {
+            for (int pixel : row) {
+                System.out.print(pixel + " ");
+            }
+            System.out.println();
+        }
     }
 
-    public static int[][] floodFill(int[][] image, int sr, int sc, int color){
-        boolean[][] visited = new boolean[image.length][image[0].length];
-        helper(image, sr, sc, color, visited, image[sr][sc]);
+    public static int[][] floodFill(int[][] image, int sr, int sc, int newColor) {
+        int oldColor = image[sr][sc];
+        if (oldColor != newColor) {
+            dfs(image, sr, sc, oldColor, newColor);
+        }
         return image;
     }
-    //O(m*n)
-    private static void helper(int[][] image, int sr, int sc, int color, boolean[][] visited, int orgColor) {
-     if(sr < 0 || sc < 0 || sr >= image.length || sc >= image[0].length || visited[sr][sc] || image[sr][sc] != orgColor){
-         return;
-     }
-     //left
-        helper(image,sr, sc-1, color,visited,orgColor);
-     //right
-        helper(image,sr, sc+1, color,visited,orgColor);
-     //up
-        helper(image,sr-1, sc, color,visited,orgColor);
-     //down
-        helper(image,sr+1, sc, color,visited,orgColor);
 
+    private static void dfs(int[][] image, int row, int col, int oldColor, int newColor) {
+        if (row < 0 || row >= image.length || col < 0 || col >= image[0].length || image[row][col] != oldColor) {
+            return;
+        }
+        image[row][col] = newColor;
+        dfs(image, row + 1, col, oldColor, newColor); // Down
+        dfs(image, row - 1, col, oldColor, newColor); // Up
+        dfs(image, row, col + 1, oldColor, newColor); // Right
+        dfs(image, row, col - 1, oldColor, newColor); // Left
     }
+   
 }
